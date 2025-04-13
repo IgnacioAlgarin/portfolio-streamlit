@@ -51,15 +51,6 @@ if menu == "Inicio":
     - Tableau Training - Maven Analytics *(free track)*  
     """)
 
-    # DETRÁS DE ESCENA
-    st.header("🎬 Cómo fue construido este sitio")
-    st.markdown("""
-    Esta aplicación fue desarrollada con **Streamlit**, diseñada para ser simple, interactiva y didáctica.
-    - Los gráficos usan `Plotly`, `Seaborn` o imágenes generadas en R.
-    - La app corre desde un entorno virtual en Linux y está lista para deploy.
-    - El código está versionado en GitHub, y podés consultarlo, clonarlo o proponer mejoras.
-    """)
-
     # CV
     try:
         with open("CV_Juan_Ignacio_Algarin.pdf", "rb") as cv_file:
@@ -68,4 +59,85 @@ if menu == "Inicio":
         st.warning("⚠️ CV no disponible en este entorno. Subilo al repositorio para activarlo.")
 
 # ---------- PROYECTOS ----------
-# [RESTA DEL CÓDIGO SIN CAMBIOS...]
+elif menu == "Proyectos":
+    st.header("📊 Proyectos destacados")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("🗳️ Análisis político en Reddit (2023)")
+        st.markdown("""
+        Exploración de +900 publicaciones de r/argentina con la API de Reddit. Se utilizó GPT para clasificar los temas y detectar menciones a políticos.
+        Incluye gráficos interactivos y un análisis temporal del impacto mediático.
+        """)
+        st.markdown("[🔗 Ver notebook en GitHub](https://github.com/IgnacioAlgarin/reddit-politica-argentina-gpt)")
+
+    with col2:
+        image = Image.open("grafico_milei.png")
+        st.image(image, caption="Menciones semanales a Milei (2017-2025)", use_container_width=True)
+
+    st.markdown("---")
+
+    col3, col4 = st.columns(2)
+
+    with col3:
+        st.subheader("🚌 Transporte público en Argentina (2024)")
+        st.markdown("""
+        Análisis de millones de transacciones SUBE para detectar patrones de movilidad. 
+        Pipeline completo con PySpark en Databricks + dashboard en Power BI.
+        """)
+        st.markdown("[🔗 Ver proyecto en GitHub](https://github.com/IgnacioAlgarin/transporte-argentina-2024)")
+
+    with col4:
+        st.image("grafico_transporte.png", caption="Distribución de viajes por provincia", use_container_width=True)
+
+    st.markdown("---")
+    st.header("🚧 En desarrollo")
+    st.markdown("""
+    - 🔍 Análisis de consumo en supermercados
+    - 📦 Exploración de APIs de música (Spotify)
+    - 📡 Scraping de noticias + análisis con IA
+    """)
+
+# ---------- CLASIFICADOR ----------
+elif menu == "Clasificador":
+    st.header("🧠 Clasificador temático en vivo (próximamente)")
+    st.info("¡Muy pronto vas a poder escribir tu propio título de Reddit y ver qué tema detecta una IA!")
+    st.text_input("Escribí un título de Reddit...", disabled=True)
+
+    st.markdown("---")
+    st.header("📂 Clasificá tus propios datos (beta)")
+    archivo = st.file_uploader("Subí un archivo CSV con una columna 'title'", type="csv")
+    if archivo is not None:
+        df = pd.read_csv(archivo)
+        st.write("Primeras 5 filas del archivo:")
+        st.dataframe(df.head())
+        st.warning("🚧 La clasificación con GPT estará disponible próximamente.")
+
+# ---------- EXPLORADOR ----------
+elif menu == "Explorador":
+    st.header("📈 Explorador interactivo de datos")
+    try:
+        df = pd.read_csv("viajes_provincia.csv")
+        fig = px.bar(df, x="provincia", y="viajes", title="Cantidad de viajes por provincia", labels={"viajes": "Viajes", "provincia": "Provincia"})
+        st.plotly_chart(fig, use_container_width=True)
+    except:
+        st.warning("⚠️ Cargá el archivo 'viajes_provincia.csv' para activar esta sección.")
+
+# ---------- CONTACTO ----------
+elif menu == "Contacto":
+    st.header("📬 Contacto")
+    st.markdown("""
+    Si querés contactarme para colaborar, contratarme o simplemente intercambiar ideas, te dejo mis redes principales:
+    
+    - 📧 Email: juanalgarin00@gmail.com
+    - 💼 [LinkedIn](https://www.linkedin.com/in/juan-ignacio-algarin-0167b018b/)
+    - 🐙 [GitHub](https://github.com/IgnacioAlgarin)
+
+    Estoy abierto a proyectos de análisis de datos, visualización, scraping y automatización con Python.
+    ¡Gracias por visitar mi sitio!
+    """)
+
+# ---------- FOOTER ----------
+st.markdown("---")
+st.caption("Hecho con ❤️ en Argentina usando Python y Streamlit - © 2025 Juan Ignacio Algarin")
