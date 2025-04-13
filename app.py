@@ -128,14 +128,22 @@ elif menu == "Explorador":
 elif menu == "Contacto":
     st.header("📬 Contacto")
     st.markdown("""
-    Si querés contactarme para colaborar, contratarme o simplemente intercambiar ideas, te dejo mis redes principales:
+    **¿Querés que trabajemos juntos o tenés una propuesta?**
     
-    - 📧 Email: juanalgarin00@gmail.com
-    - 💼 [LinkedIn](https://www.linkedin.com/in/juan-ignacio-algarin-0167b018b/)
+    Estoy siempre abierto a colaborar en proyectos que mezclen datos, creatividad y tecnología.  
+    Ya sea para construir dashboards, automatizar procesos, explorar APIs o contar historias con gráficos... ¡contá conmigo!
+    
+    📩 Podés escribirme directamente por mail o contactarme por redes:  
+    - ✉️ juanalgarin00@gmail.com  
+    - 💼 [LinkedIn](https://www.linkedin.com/in/juan-ignacio-algarin-0167b018b/)  
     - 🐙 [GitHub](https://github.com/IgnacioAlgarin)
 
-    Estoy abierto a proyectos de análisis de datos, visualización, scraping y automatización con Python.
-    ¡Gracias por visitar mi sitio!
+---
+
+🤝 *Actualmente busco mi primera experiencia formal en el mundo data.*  
+Estoy aprendiendo y creando todos los días, siempre con ganas de sumar valor desde el análisis.
+
+
     """)
 
 # ---------- FOOTER ----------
