@@ -138,11 +138,10 @@ elif menu == "Contacto":
     - 💼 [LinkedIn](https://www.linkedin.com/in/juan-ignacio-algarin-0167b018b/)  
     - 🐙 [GitHub](https://github.com/IgnacioAlgarin)
 
----
+    ---
 
-🤝 *Actualmente busco mi primera experiencia formal en el mundo data.*  
-Estoy aprendiendo y creando todos los días, siempre con ganas de sumar valor desde el análisis.
-
+    🤝 *Actualmente busco mi primera experiencia formal en el mundo data.*  
+    Estoy aprendiendo y creando todos los días, siempre con ganas de sumar valor desde el análisis.
 
     """)
 
