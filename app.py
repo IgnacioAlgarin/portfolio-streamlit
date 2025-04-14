@@ -14,7 +14,8 @@ if menu == "Inicio":
     st.title("🚀 Juan Ignacio Algarin")
     st.subheader("Lic. en Ciencia de Datos (UNSAM) | Apasionado por los datos, la visualización y las APIs")
 
-    st.success("""📢 *“Los datos son el nuevo petróleo, pero sin análisis, solo es lodo.”*""")
+    st.success("""📢 *“"El objetivo de la analítica es convertir datos en información, y la información en conocimiento."
+                        — Carly Fiorina, ex CEO de HP”*""")
 
     st.markdown("""
     Bienvenido a mi portfolio interactivo. Aquí encontrarás proyectos reales que exploran desde el análisis político con IA hasta dashboards de transporte público.
