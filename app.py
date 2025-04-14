@@ -66,7 +66,7 @@ elif menu == "Proyectos":
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("🗳️ Análisis político en Reddit (2023)")
+        st.subheader("¿Cómo se habla de política en Reddit Argentina? Un análisis con Python y GPT ")
         st.markdown("""
         Exploración de +900 publicaciones de r/argentina con la API de Reddit. Se utilizó GPT para clasificar los temas y detectar menciones a políticos.
         Incluye gráficos interactivos y un análisis temporal del impacto mediático.
